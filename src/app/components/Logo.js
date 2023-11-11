@@ -1,8 +1,8 @@
-export function Logo(props) {
+export function Logo({ color = "#000", width = 100 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="100"
+      width={width}
       viewBox="0 0 127 105"
       fill="none"
     >
@@ -17,7 +17,7 @@ export function Logo(props) {
         />
         <path
           d="M55.6263 65.3128L52.9086 62.5025L21.0433 62.1067L55.6393 32.0347V23.918L52.6488 20.8101H24.063L20.9362 23.9605V42.7784L0.0162836 42.8177L0.0032959 15.2419L15.1274 0.104492H61.5811L76.6176 15.255V44.8722M20.8323 104.931L20.7771 84.2059H52.5384L52.5709 104.905L20.8323 104.931Z"
-          fill="#000"
+          fill={color}
         />
       </g>
       <defs>

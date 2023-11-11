@@ -39,7 +39,7 @@ export function Footer() {
           </div>
           <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
             <div className="relative flex h-24 w-24 flex-none items-center justify-center">
-              <QrCodeBorder className="absolute inset-0 h-full w-full stroke-gray-300 transition-colors group-hover:stroke-cyan-500" />
+              <QrCodeBorder className="absolute inset-0 h-full w-full stroke-gray-300 transition-colors group-hover:stroke-carnation-500" />
               <Image src={qrCode} alt="" unoptimized className="p-1.5" />
             </div>
             <div className="ml-8 lg:w-64">
@@ -68,7 +68,7 @@ export function Footer() {
               required
               className="w-60 min-w-0 shrink"
             />
-            <Button type="submit" color="cyan" className="ml-4 flex-none">
+            <Button type="submit" color="primary" className="ml-4 flex-none">
               <span className="hidden lg:inline">Bültenimize katıl</span>
               <span className="lg:hidden">Bültene katıl</span>
             </Button>

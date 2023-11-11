@@ -53,7 +53,7 @@ export function Footer() {
                 </Link>
               </p>
               <p className="mt-1 text-sm text-gray-700">
-                Uygulamayı App Store'dan indirmek için QR kodunu tarayın.
+                Uygulamayı App Store&apos;dan indirmek için QR kodunu tarayın.
               </p>
             </div>
           </div>

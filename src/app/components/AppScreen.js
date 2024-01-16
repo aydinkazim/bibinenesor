@@ -19,10 +19,10 @@ function MenuIcon(props) {
 export function AppScreen({ children, className, ...props }) {
   return (
     <div className={clsx("flex flex-col", className)} {...props}>
-      <div className="flex justify-between items-center px-4 pt-4">
+      {/* <div className="flex justify-between items-center px-4 pt-4">
         <Logo color="#FFF" width={"50"} className="h-6 flex-none" />
         <MenuIcon className="h-6 w-6 flex-none" />
-      </div>
+      </div> */}
       {children}
     </div>
   );

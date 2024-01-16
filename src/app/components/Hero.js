@@ -1,19 +1,25 @@
 import { useId } from "react";
 import Image from "next/image";
-import clsx from "clsx";
 
-import logoBbc from "../images/logos/bbc.svg";
-import logoCbs from "../images/logos/cbs.svg";
-import logoCnn from "../images/logos/cnn.svg";
-import logoFastCompany from "../images/logos/fast-company.svg";
-import logoForbes from "../images/logos/forbes.svg";
-import logoHuffpost from "../images/logos/huffpost.svg";
-import logoTechcrunch from "../images/logos/techcrunch.svg";
-import logoWired from "../images/logos/wired.svg";
 import { Container } from "./Container";
 import { AppStoreLink } from "./AppStoreLink";
 import { PhoneFrame } from "./PhoneFrame";
 import { AppScreen } from "./AppScreen";
+import splashScreen from "../images/splash_screen2.png";
+import qrCode from "../images/qr-code.png";
+import Link from "next/link";
+
+function QrCodeBorder(props) {
+  return (
+    <svg viewBox="0 0 96 96" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M1 17V9a8 8 0 0 1 8-8h8M95 17V9a8 8 0 0 0-8-8h-8M1 79v8a8 8 0 0 0 8 8h8M95 79v8a8 8 0 0 1-8 8h-8"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
 function BackgroundIllustration(props) {
   let id = useId();
@@ -86,18 +92,27 @@ function BackgroundIllustration(props) {
 
 export function Hero() {
   return (
-    <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
+    <div className="overflow-hidden py-20 lg:pb-32 xl:pb-36">
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
-          <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
+          <div className="-mt-10 relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
             <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-              biBineneSor
+              Bi&apos; Binene Sor
             </h1>
             <p className="mt-6 text-lg text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis enim
-              velit, semper sit amet scelerisque non, vestibulum maximus magna.
-              Nulla convallis interdum turpis a porttitor. Integer a imperdiet
-              turpis.
+              Araçlar ve taşıtlarla ilgili merak ettiklerinizi sormak, bilgi
+              alışverişinde bulunmak ve deneyimlerinizi diğer insanlarla
+              paylaşmak için Bi&apos;Binene Sor uygulamasını keşfedin!
+            </p>
+            {/* <p className="mt-6 text-lg text-gray-600">
+              Servise vesanayiye gitmeden önce deneyimli ve bilgi sahibi olan
+              kullanıcıların fikir ve görüşlerini alarak pratik çözümler bulun,
+              maliyetlerinizi düşürün!
+            </p> */}
+            <p className="mt-6 text-lg text-gray-600">
+              Araç satın almadan önce veya merak ettiğiniz bir araç hakkında, o
+              aracı deneyimlemiş kişilerin yorum ve puanları sayesinde fikir
+              edinin!
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <AppStoreLink />
@@ -107,33 +122,33 @@ export function Hero() {
             <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
             <div className="-mx-4 h-[448px] px-9 [mask-image:linear-gradient(to_bottom,white_60%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
               <PhoneFrame className="mx-auto max-w-[366px]" priority>
-                <AppScreen />
+                <AppScreen>
+                  <Image src={splashScreen}></Image>
+                </AppScreen>
               </PhoneFrame>
             </div>
           </div>
           <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
-            <p className="text-center text-sm font-semibold text-gray-900 lg:text-left">
-              Öne çıkanlar
-            </p>
-            <ul
-              role="list"
-              className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-10 gap-y-8 lg:mx-0 lg:justify-start"
-            >
-              {[
-                ["Forbes", logoForbes],
-                ["TechCrunch", logoTechcrunch],
-                ["Wired", logoWired],
-                ["CNN", logoCnn, "hidden xl:block"],
-                ["BBC", logoBbc],
-                ["CBS", logoCbs],
-                ["Fast Company", logoFastCompany],
-                ["HuffPost", logoHuffpost, "hidden xl:block"],
-              ].map(([name, logo, className]) => (
-                <li key={name} className={clsx("flex", className)}>
-                  <Image src={logo} alt={name} className="h-8" unoptimized />
-                </li>
-              ))}
-            </ul>
+            <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:self-auto lg:p-6">
+              <div className="relative flex h-24 w-24 flex-none items-center justify-center">
+                <QrCodeBorder className="absolute inset-0 h-full w-full stroke-gray-300 transition-colors group-hover:stroke-carnation-500" />
+                <Image src={qrCode} alt="" unoptimized className="p-1.5" />
+              </div>
+              <div className="ml-8 lg:w-64">
+                <p className="text-base font-semibold text-gray-900">
+                  <Link
+                    target="_blank"
+                    href="https://open.spotify.com/intl-tr/track/5sDfdy2KjGQYZQKmII5Vwy?si=9a003a63a2dc4e51"
+                  >
+                    <span className="absolute inset-0 sm:rounded-2xl" />
+                    Uygulamayı İndir
+                  </Link>
+                </p>
+                <p className="mt-1 text-sm text-gray-700">
+                  Uygulamayı App Store&apos;dan indirmek için QR kodunu tarayın.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

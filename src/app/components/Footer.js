@@ -29,7 +29,7 @@ export function Footer() {
             <div className="flex items-center text-gray-900">
               <Logo />
               <div className="ml-4">
-                <p className="text-base font-semibold">biBineneSor</p>
+                <p className="text-base font-semibold">Bi’Binene Sor</p>
                 <p className="mt-1 text-sm">Deneyim paylaşma noktası.</p>
               </div>
             </div>
@@ -59,22 +59,9 @@ export function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center border-t border-gray-200 pb-12 pt-8 md:flex-row-reverse md:justify-between md:pt-6">
-          <form className="flex w-full justify-center md:w-auto">
-            <TextField
-              type="email"
-              aria-label="E-posta adresi"
-              placeholder="E-posta adresi"
-              autoComplete="email"
-              required
-              className="w-60 min-w-0 shrink"
-            />
-            <Button type="submit" color="primary" className="ml-4 flex-none">
-              <span className="hidden lg:inline">Bültenimize katıl</span>
-              <span className="lg:hidden">Bültene katıl</span>
-            </Button>
-          </form>
           <p className="mt-6 text-sm text-gray-500 md:mt-0">
-            &copy; Copyright {new Date().getFullYear()}. Tüm hakları saklıdır.
+            &copy; Copyright Bi’Binene Sor {new Date().getFullYear()}. Tüm
+            hakları saklıdır.
           </p>
         </div>
       </Container>

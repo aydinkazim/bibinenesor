@@ -202,7 +202,7 @@ function ReviewGrid() {
 export function Reviews() {
   return (
     <section
-      id="reviews"
+      id="shares"
       aria-labelledby="reviews-title"
       className="pb-16 pt-20 sm:pb-24 sm:pt-32"
     >

@@ -10,8 +10,9 @@ import { Container } from "./Container";
 import { CircleBackground } from "./CircleBackground";
 import Image from "next/image";
 import home_1 from "../images/home_1.png";
+import home_3 from "../images/home_3.png";
+import home_2 from "../images/home_2.png";
 
-const MotionAppScreenHeader = motion(AppScreen.Header);
 const MotionAppScreenBody = motion(AppScreen.Body);
 
 const features = [
@@ -37,12 +38,6 @@ const features = [
     screen: InvestScreen,
   },
 ];
-
-const headerAnimation = {
-  initial: { opacity: 0, transition: { duration: 0.3 } },
-  animate: { opacity: 1, transition: { duration: 0.3, delay: 0.3 } },
-  exit: { opacity: 0, transition: { duration: 0.3 } },
-};
 
 const maxZIndex = 2147483647;
 
@@ -84,14 +79,8 @@ const bodyAnimation = {
 function InviteScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Sorunu sor</AppScreen.Title>
-        <AppScreen.Subtitle>
-          Ya da yardım isteyenler ile deneyimlerini paylaş!
-        </AppScreen.Subtitle>
-      </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <Image src={home_1} className="rounded-t-2xl" />
+        <Image src={home_1} className="rounded-t-2xl" alt="Soru sorma" />
       </MotionAppScreenBody>
     </AppScreen>
   );
@@ -100,16 +89,8 @@ function InviteScreen({ custom, animated = false }) {
 function StocksScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Deneyimleri bekle</AppScreen.Title>
-        <AppScreen.Subtitle>
-          Tecrübeli insanların sana yardım etmesi çok hoşuna gidecek!
-        </AppScreen.Subtitle>
-      </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="divide-y divide-gray-100">
-          <div className="flex items-center gap-4 px-4 py-3">İKİ</div>
-        </div>
+        <Image src={home_3} className="rounded-t-2xl" alt="Soru detay" />
       </MotionAppScreenBody>
     </AppScreen>
   );
@@ -118,17 +99,8 @@ function StocksScreen({ custom, animated = false }) {
 function InvestScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Cevap verenleri puanla</AppScreen.Title>
-        <AppScreen.Subtitle>
-          Ya da deneyimlerini paylaştığın kişilerin sana teşekkür ettiklerini
-          gör!
-        </AppScreen.Subtitle>
-      </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="divide-y divide-gray-100">
-          <div className="flex items-center gap-4 px-4 py-3">ÜÇ</div>
-        </div>
+        <Image src={home_2} className="rounded-t-2xl" alt="Yorumlar" />
       </MotionAppScreenBody>
     </AppScreen>
   );
@@ -183,7 +155,7 @@ function FeaturesDesktop() {
             <div className="relative z-10 p-8">
               <div className="text-5xl"> {feature.icon} </div>
               <h3 className="mt-6 text-lg font-semibold text-white">
-                <Tab className="text-left [&:not(:focus-visible)]:focus:outline-none">
+                <Tab className="text-left focus:outline-none">
                   <span className="absolute inset-0 rounded-2xl" />
                   {feature.name}
                 </Tab>
@@ -199,7 +171,10 @@ function FeaturesDesktop() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#ff5b5b" className="animate-spin-slower" />
         </div>
-        <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
+        <PhoneFrame
+          bg={"#FF5B5B"}
+          className="z-10 mx-auto w-full max-w-[366px]"
+        >
           <Tab.Panels as={Fragment}>
             <AnimatePresence
               initial={false}
@@ -274,11 +249,14 @@ function FeaturesMobile() {
             <div className="relative transform overflow-hidden rounded-2xl bg-gray-800 px-5 py-6">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <CircleBackground
-                  color="#13B5C8"
+                  color="#FF5B5B"
                   className={featureIndex % 2 === 1 ? "rotate-180" : undefined}
                 />
               </div>
-              <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
+              <PhoneFrame
+                bg={"#FF5B5B"}
+                className="relative mx-auto w-full max-w-[366px]"
+              >
                 <feature.screen />
               </PhoneFrame>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">

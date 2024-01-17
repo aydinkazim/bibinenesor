@@ -4,9 +4,7 @@ import Link from "next/link";
 import qrCode from "../images/qr-code.png";
 import { Logo } from "./Logo";
 import { NavLinks } from "./NavLinks";
-import { TextField } from "./Fields";
 import { Container } from "./Container";
-import { Button } from "./Button";
 
 function QrCodeBorder(props) {
   return (
@@ -40,7 +38,12 @@ export function Footer() {
           <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
             <div className="relative flex h-24 w-24 flex-none items-center justify-center">
               <QrCodeBorder className="absolute inset-0 h-full w-full stroke-gray-300 transition-colors group-hover:stroke-carnation-500" />
-              <Image src={qrCode} alt="" unoptimized className="p-1.5" />
+              <Image
+                src={qrCode}
+                alt="Uygulama indirme qr görseli"
+                unoptimized
+                className="p-1.5"
+              />
             </div>
             <div className="ml-8 lg:w-64">
               <p className="text-base font-semibold text-gray-900">

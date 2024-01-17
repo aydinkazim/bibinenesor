@@ -3,54 +3,77 @@ import clsx from "clsx";
 import { useInView } from "framer-motion";
 import { Container } from "./Container";
 import Image from "next/image";
-import r1 from "../images/r1.png";
+
+import r1 from "../images/reviews/r1.png";
+import r2 from "../images/reviews/r2.png";
+import r3 from "../images/reviews/r3.png";
+import r4 from "../images/reviews/r4.png";
+import r5 from "../images/reviews/r5.png";
+import r6 from "../images/reviews/r6.png";
+import r7 from "../images/reviews/r7.png";
+import r8 from "../images/reviews/r8.png";
+import r9 from "../images/reviews/r9.png";
+import r10 from "../images/reviews/r10.png";
+import r11 from "../images/reviews/r11.png";
+import r12 from "../images/reviews/r12.png";
+import r13 from "../images/reviews/r13.png";
 
 const reviews = [
   {
     src: r1,
+    alt: "Arabamın aküsü neden sürekli boşalıyor?",
   },
   {
-    src: r1,
+    src: r2,
+    alt: "Motor neden aşırı ısınıyor?",
   },
   {
-    src: r1,
+    src: r3,
+    alt: "Frenler neden gıcırdıyor?",
   },
   {
-    src: r1,
+    src: r4,
+    alt: "Egzozdan neden siyah duman çıkıyor?",
   },
   {
-    src: r1,
+    src: r5,
+    alt: "BMW x5 30d M Sport için bir yorum Bu araç gerçekten bambaşka pişman olmayacaksınız mutlaka alıp kısa bir süre bile olsa tadına bakın.",
   },
   {
-    src: r1,
+    src: r6,
+    alt: "Alfa Romeo Gulia 2.0 T Sprint için bir yorum Konfor, makam, hız, prestij ne isterseniz yıldızda. Al bakımını yap 1 milyon km bin arkana yaslan.",
   },
   {
-    src: r1,
+    src: r7,
+    alt: "Fiat Egea 1.6 Multijet için bir yorum Fiyat performans aracı çok fazla benklentiniz olmasın ama asla pişman etmez peynir ekmek gibi istediğiniz zaman satarsınız rahat olun bu devirde alınabilir.",
   },
   {
-    src: r1,
+    src: r8,
+    alt: "Tesla Model Y için bir yorum Tam bir servis aracı yakıtı kokluyor kokluyor. Çok gezen şehir içi çok araba kullanan birisi için gayet ideal. Kaportası kağıt ama fiyatı da ona göre",
   },
   {
-    src: r1,
+    src: r9,
+    alt: "Honda Civic 1.6 Trend için bir yorum Boş yere taksi aracı olarak tercih edilmiyor bu araba sanayiye uğramazsınız lpg takarsan yakıtı elektrikli araçlarla kapışır uzun yolda.",
   },
   {
-    src: r1,
+    src: r10,
+    alt: "Alfa Romeo Gulia 2.0 T Sprint için bir yorum Kullanım olarak memnunum aslında premium hissiyatı da var ancak parça bulmakta zorlanıyorum bazen burda pek piyasası olmadığı için de zor satıyor biraz",
   },
   {
-    src: r1,
+    src: r11,
+    alt: "Yakıt tüketimi çok fazla, nasıl düşürebilirim?",
   },
   {
-    src: r1,
+    src: r12,
+    alt: "Arabamın koltukları nasıl temizlenir?",
   },
   {
-    src: r1,
-  },
-  {
-    src: r1,
+    src: r13,
+    alt: "Arabamın koltukları nasıl temizlenir?",
   },
 ];
 
-function Review({ src, className, ...props }) {
+function Review({ src, alt, className, ...props }) {
   let animationDelay = useMemo(() => {
     let possibleAnimationDelays = [
       "0s",
@@ -74,7 +97,7 @@ function Review({ src, className, ...props }) {
       style={{ animationDelay }}
       {...props}
     >
-      <Image src={src} alt="asd" priority={false} />
+      <Image src={src} alt={alt} />
     </figure>
   );
 }
@@ -188,10 +211,11 @@ export function Reviews() {
           id="reviews-title"
           className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
         >
-          Everyone is changing their life with Pocket.
+          Herkes merak ettiklerini Bi&apos; Binene Sor &apos;uyor
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          Thousands of people have doubled their net-worth in the last 30 days.
+          Her gün binlerce kişi merak ettikleri soruları ve deneyimlerini burada
+          paylaşıyor
         </p>
         <ReviewGrid />
       </Container>

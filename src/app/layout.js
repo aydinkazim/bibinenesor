@@ -13,6 +13,13 @@ export const metadata = {
     description:
       "Aracınla ilgili soru sormak, yorum yapmak veya soruları cevaplamak ister misin? Araç alım satım kararlarınızı daha bilinçli hale getirmek için deneyimli kullanıcıların yorumlarına ve puanlarına göz atabilirsin.",
   },
+  robots: {
+    index: true,
+    follow: true,
+    'max-snippet': -1,
+    'max-video-preview': -1,
+    'max-image-preview': 'large',
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -22,6 +29,7 @@ export default function RootLayout({ children }) {
         <meta name="og:image" content={og.src} />
         <meta name="twitter:image" content={og.src} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

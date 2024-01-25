@@ -29,7 +29,6 @@ export default function RootLayout({ children }) {
         <meta name="og:image" content={og.src} />
         <meta name="twitter:image" content={og.src} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

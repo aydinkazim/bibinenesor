@@ -150,7 +150,7 @@ export function Hero() {
                 <p className="text-base font-semibold text-gray-900">
                   <Link
                     target="_blank"
-                    href="https://open.spotify.com/intl-tr/track/5sDfdy2KjGQYZQKmII5Vwy?si=9a003a63a2dc4e51"
+                    href="https://apps.apple.com/app/bi-binene-sor/id6464002927"
                   >
                     <span className="absolute inset-0 sm:rounded-2xl" />
                     Uygulamayı İndir

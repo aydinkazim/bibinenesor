@@ -114,7 +114,7 @@ export function Header() {
                             {/* <Button href="/login" variant="outline">
                               Log in
                             </Button> */}
-                            <Button href="#">Uygulamayı İndir</Button>
+                            <Button href="https://apps.apple.com/app/bi-binene-sor/id6464002927">Uygulamayı İndir</Button>
                           </div>
                         </Popover.Panel>
                       </>
@@ -126,7 +126,7 @@ export function Header() {
             {/* <Button href="/login" variant="outline" className="hidden lg:block">
               Log in
             </Button> */}
-            <Button href="#" color="primary" className="hidden lg:block">
+            <Button href="https://apps.apple.com/app/bi-binene-sor/id6464002927" color="primary" className="hidden lg:block">
               Uygulamayı İndir
             </Button>
           </div>
